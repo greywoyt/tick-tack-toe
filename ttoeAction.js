@@ -62,8 +62,9 @@ window.addEventListener('load', function(){
             cells[i].classList.remove('tttoe__cells_o');
         }
 
-        if(winnerMessage){
-            dropWinnerMessage();}
+        if(document.body.firstChild.className=='winnerMessage'){
+            dropWinnerMessage();
+        }
 
         nextMove='tttoe__cells_x';
     });
@@ -74,8 +75,9 @@ window.addEventListener('load', function(){
             cells[i].classList.remove('tttoe__cells_o');
             cells[i].classList.add('tttoe__cells_background');
         }
-        if(winnerMessage)
-        dropWinnerMessage();
+        if(document.body.firstChild.className=='winnerMessage'){
+            dropWinnerMessage();
+        }
     });
 
     field.addEventListener('click', function handleCellClick(e) {
