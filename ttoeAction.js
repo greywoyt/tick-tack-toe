@@ -7,21 +7,19 @@ window.addEventListener('load', function(){
     var cells=document.querySelectorAll('.tttoe__cells');
     var playButton=document.querySelector('.tttoe__button_play');
     var stopButton=document.querySelector('.tttoe__button_stop');
-    //var winMessage;
-    //var winnerMessageWindow=document.querySelector('.winnerMessage')
     var nextMove='tttoe__cells_x';
 
-    function getWinner(){
+    function getWinner() {
         var cellsMass=document.querySelectorAll('.tttoe__cells');
         var cells=[[0,1,2], [3,4,5], [6,7,8]];
         var i;
         for(i=0; i<3; i++){
             for(var j=0; j<3; j++) {
               var el=cellsMass[i*3+j];
-                if (el.classList.contains('tttoe__cells_x')) {
+                if ( el.classList.contains('tttoe__cells_x') ) {
                     cells[i][j]='tttoe__cells_x';
                 }
-                if (el.classList.contains('tttoe__cells_o')) {
+                if ( el.classList.contains('tttoe__cells_o') ) {
                     cells[i][j]='tttoe__cells_o'
                 }
             }
