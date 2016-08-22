@@ -8,7 +8,7 @@ window.addEventListener('load', function(){
     var playButton=document.querySelector('.tttoe__button_play');
     var stopButton=document.querySelector('.tttoe__button_stop');
     //var winMessage;
-    //var winnerMessageWindow=document.querySelector('.winnerMessage')
+    var winnerMessageWindow=document.querySelector('.winnerMessage')
     var nextMove='tttoe__cells_x';
 
     function getWinner(){
