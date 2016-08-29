@@ -2,58 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
-    <link href='fonts/awesome/css/font-awesome.min.css' rel="stylesheet">
-    <script src="ttoeAction.js"></script>
 </head>
 <body>
-    <div id="wrapper">
-        <header>
-            <div class="header__login-box"><span>login or register</span></div>
-            <div class="header__title-box">
-                <span>Tick-Tack-Toe</span>
-                <div class="header__logo"></div>
-            </div>
-        </header>
+<main class="display-1">
+    <header class="header-box"></header>
+    <section class="wrapper">
+        <section class="tttoe">
 
-       <!--<main>-->
-        <!--<main class="tttoe-image"></main>-->
-       <!--</main>-->
-
-        <main class="tttoe">
-                <div class="tttoe__top-sidebar"></div>
-                <div class="tttoe__field-wrapper">
-                    <div class="tttoe__field">
-                        <div class="tttoe__row">
-                            <div class="tttoe__cells tttoe__cells_background"></div>
-                            <div class="tttoe__cells tttoe__cells_background tttoe__cells_border"></div>
-                            <div class="tttoe__cells tttoe__cells_background"></div>
-                        </div>
-                        <div class="tttoe__row tttoe__row_border">
-                            <div class="tttoe__cells tttoe__cells_background"></div>
-                            <div class="tttoe__cells tttoe__cells_background tttoe__cells_border"></div>
-                            <div class="tttoe__cells tttoe__cells_background"></div>
-                        </div>
-                        <div class="tttoe__row">
-                            <div class="tttoe__cells tttoe__cells_background"></div>
-                            <div class="tttoe__cells tttoe__cells_background tttoe__cells_border"></div>
-                            <div class="tttoe__cells tttoe__cells_background"></div>
-                        </div>
+            <div class="tttoe__field">
+                <div class="tttoe__row">
+                    <div class="tttoe__cells tttoe__cells_o"></div>
+                    <div class="tttoe__cells tttoe__cells_o tttoe__cells--border"></div>
+                    <div class="tttoe__cells tttoe__cells_x"></div>
+                </div>
+                    <div class="tttoe__row  ttoe__row--border">
+                        <div class="tttoe__cells tttoe__cells_o"></div>
+                        <div class="tttoe__cells tttoe__cells_x tttoe__cells--border"></div>
+                        <div class="tttoe__cells tttoe__cells_o "></div>
+                    </div>
+                    <div class="tttoe__row">
+                        <div class="tttoe__cells"></div>
+                        <div class="tttoe__cells tttoe__cells_x tttoe__cells--border"></div>
+                        <div class="tttoe__cells tttoe__cells_x"></div>
                     </div>
                 </div>
-                <div class="tttoe__button-sidebar">
-                    <i class="tttoe__button tttoe__button_play fa fa-play-circle" aria-hidden="true" data-title="Play Game"></i>
-                    <i class="tttoe__button tttoe__button_stop fa fa-stop-circle" data-title="Stop Game"></i>
-                </div>
-
-
+        </section>
+        <main class="game-info">
+            <div class="tttoe__game-title">Tic Tac Toe</div>
+            <section class="game-variant">
+                <div class="game-variant__single">Single Player</div>
+                <div class="game-variant__multi">Multi Player</div>
+            </section>
         </main>
+   </section>
+</main>
 
 
-</div>
-
-    <footer></footer>
+<!--<main class="display-2">
+    <header class="header-box header-box--2"></header>
+    <section class="wrapper wrapper--2">
+        <section class="tttoe tttoe--game">
+            <div class="tttoe__field">
+                <div class="tttoe__row">
+                    <div class="tttoe__cells tttoe__cells_o"></div>
+                    <div class="tttoe__cells tttoe__cells_o tttoe__cells--border"></div>
+                    <div class="tttoe__cells tttoe__cells_x"></div>
+                </div>
+                <div class="tttoe__row  ttoe__row--border">
+                    <div class="tttoe__cells tttoe__cells_o"></div>
+                    <div class="tttoe__cells tttoe__cells_x tttoe__cells--border"></div>
+                    <div class="tttoe__cells tttoe__cells_o "></div>
+                </div>
+                <div class="tttoe__row">
+                    <div class="tttoe__cells"></div>
+                    <div class="tttoe__cells tttoe__cells_x tttoe__cells--border"></div>
+                    <div class="tttoe__cells tttoe__cells_x"></div>
+                </div>
+            </div>
+        </section>
+        <main class="game-resultation">
+            <div class="game-resultation-1"></div>
+            <div class="game__resultation-2"></div>
+        </main>
+    </section>
+</main>-->
 
 </body>
 </html>

@@ -1,237 +1,381 @@
 @import "reset.css";
 
 @font-face {
-    font-family: Roboto-Black;
-    src: url(fonts/Roboto-Black.ttf);
+    font-face-name: Linas;
+    font-family: Linas;
+    src: url(fonts/Linas.ttf);
+}
+
+@font-face {
+    font-face-name: Dadhand;
+    font-family: Dadhand;
+    src: url(fonts/Dadhand.ttf);
+}
+
+@font-face {
+    font-face-name: Dark;
+    font-family: Dark;
+    src: url(fonts/dark_half.ttf);
+}
+
+@font-face {
+    font-face-name: Wacky;
+    font-family: Wacky;
+    src: url(fonts/Wacky.ttf);
 }
 
 html, body {
-    height:100%;
-    min-height: 100%;
-    font-family: Roboto-Black;
-    t-size: 10px;
+    height: 100%;
+   /* min-height: 100%;*/
+    font-size: 100px;
 }
 
-#wrapper {
-    min-height: 100%;
-    /*border: 5px solid red;*/
-}
+/*display-1*/
+.display-1 {
+    /*display: none;*/
+    height: 100%;
+    min-width: 300px;
+    min-height: 200px;
 
-.header__login-box {
-    position: relative;
-    width: 100%;
-    min-height: 33px;
-    font-family: Roboto-Black;
-    font-size: 1vw;
-    text-align: center;
-    background-color: #3c3c3c;
-    /*box-shadow: 5px 8px 30px rgba(0,0,0,0.6);*/
-}
-
-.header__login-box:first-child span {
-    display: block;
-    float: right;
-    width: 18vw;
-    min-height: 33px;
-    color: rgba(255,255,255,0.6);;
-    margin-right: 3%;
-    padding-top: 0.25em;
-    border-left: 2px solid rgba(255,255,255,0.1);
-    border-right: 2px solid rgba(255,255,255,0.1);
-}
-
-.header__title-box {
-
-    width: 100%;
-    min-width: 768px;
-    height:6vw;
-    background-color: #f64343;
-    box-shadow: 0 8px 30px -5px rgba(61,60,60,0.6);
 
 }
 
-.header__title-box span {
-    display: inline-block;
-    font-family: Roboto-Black;
-    font-size: 3vw;
-    color: rgba(255,255,255, 0.7);
-    width: 21vw;
-    height: 4vw;;
-    margin: 1vw 0 0 40vw;
-
+.display--1 {
+    display: none;
 }
 
-@-webkit-keyframes move-logo{
-    0% {margin-top: 5vw;}
-    10% {margin-top: 0;}
-    20% {margin-top: 5vw;}
-    30% {margin-top: 0;}
-    40% {margin-top: 5vw;}
-    50% {margin-top: 0;}
-    60% {margin-top: 5vw;}
-    70% {margin-top: 0;}
-    80% {margin-top: 5vw;}
-    100% {margin-top: 0;}
+.wrapper {
+    margin: 0 auto;
+    background-color: #eeeeee;
+   /* display: flex;
+    flex-direction: row-reverse;
+    min-width: 1024px;*/
+    height: 94%;
 }
 
-.header__logo {
-    background: url("images/ttToe-logo.png");
-    background-size: cover;
-    position: absolute;
-    width: 9.4vw;
-    height: 6.4vw;
-    top: 8vh;
-    left:2vw;
-    transform: rotate(5deg);
-    -webkit-transform: rotate(5deg);
-    -webkit-animation: easy 2s ;
-    opacity: 0.85;
+.header-box {
+    height: 6%;
+    /*height: 0.6rem;*/
+    background-color: #5b55a0;
 }
 
 .tttoe {
-    width: 35vw;
-    height: 35vw;
-    background-color: aliceblue;
-    margin: 0.5vw auto 0;
-    border: 5px solid rgba(0,0,0,0.8);
-    border-radius: 15px;
-    /*box-shadow: 1px px 20px 0.2px rgba(0,0,0,0.6);*/
-}
-
-.winnerMessage {
-    position: absolute;
-    z-index: 100;
-    top: 18vw;
-    left: 29.5vw;;
-    width: 41vw;
-    height: 6vw;
-    font-size: 4vw;
-    color: #f64343;
-    text-align: center;
-    padding: 80px 0;
-    vertical-align: middle;
-    background-color: #eeeeee;
-    /*border: 1px solid black;*/
-
-    opacity: 0.8;
-}
-
-.tttoe__top-sidebar  {
-    width: 100%;
-    height: 4vw;
-    box-shadow: 1px 20px 15px -10px rgba(0,0,0,0.6);
-    border-bottom: 1px solid black;
-}
-
-.tttoe__field-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 27.4vw;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    width: 100%;
+    /*height: 9.5rem;*/
+    height: 50%;
+    /*border: 4px solid red;*/
+
 }
 
 .tttoe__field {
-    width: 24.2vw;
-    height: 24.2vw;
-    border: 5px solid #766ee4;
-    border-radius: 5px;
+    width: 2rem;
+    height: 2rem;
+    /*border: 5px solid black;*/
 }
 
 .tttoe__row {
-    height: 8vw;
-
+    width: 100%;
+    height: 33%;
+    display:flex;
 }
 
-.tttoe__row_border {
-    border-top: 2px solid darkgrey;
-    border-bottom: 2px solid darkgray;
+.ttoe__row--border {
+    border-top: 0.1rem solid #e58228;
+    border-bottom: 0.1rem solid #e58228;
 }
 
 .tttoe__cells {
-    margin: -0.5px;
-    display: inline-block;
-    float: left;
-    width: 8vw;
-    height: 8vw;
-    border: none;
-    opacity: 0.5;
-
-}
-
-.tttoe__cells_background {
-    background: -webkit-linear-gradient(95rad, #5266c8, wheat, rgba(255, 255, 255, 0.1));
-}
-
-.tttoe__cells_o {
-    content: url('images/o.svg');
-    opacity: 1;
-
-}
-
-.tttoe__cells_x {
-    content: url('images/x.svg');
-    opacity: 1;
-
-}
-
-.tttoe__cells_border {
-    border-right: 2px solid #3c3c3c;
-    border-left: 2px solid #3c3c3c;
-}
-
-.tttoe__button-sidebar {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    width: 35vw;
-    height: 3vw;
-    top: 0.55vw;
-    background-color: rgba(0,0,0,0.8);
+    width: 33%;
+    height: 100%;
     border: 1px solid black;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-   /* box-shadow: -1px -5px 15px -2px rgba(0,0,0,0.6);*/
+    border: none;
 }
 
-.tttoe__button {
-    color: white;
-    margin-right: 0.5vw;
+.tttoe__cells--border {
+    border-left: 0.1rem solid #e58228;
+    border-right: 0.1rem solid #e58228;
 }
 
-.tttoe__button.fa.fa-play-circle {
-    font-size: 2.5vw;
+.tttoe__cells_o::before {
+    content: 'o';
+    font-family: Linas;
+    font-size: 0.5rem;
+    color: #13afbe;
 }
 
-.tttoe__button.fa.fa-stop-circle {
-    font-size: 2vw;
+.tttoe__cells_x::before {
+    content: 'x';
+    font-family: Dadhand;
+    font-size: 1rem;
+    color: #7db78e;
+    margin-top: -0.1rem;
 }
 
 
-.tttoe__button:hover::after {
-    content: attr(data-title);
-    position: absolute;
-    top: -1.6vw;
-    left: 14.5vw;
-    width: 5vw;
-    font-size: 1vw;
-    text-align: center;
-    color: black;
-    margin: 0;
-    padding: 0;
+
+.game-info {
+    height: 50%;
+    /*margin-top: 0.2rem;*/
+}
+
+.tttoe__game-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45%;
+    font-family: Dark;
+    font-size: 0.6rem;
+    font-weight: bold;
+    word-spacing: -0.1rem;
+    color: #14abb9;
     /*border: 1px solid black;*/
-    background: honeydew;
 
 }
 
-footer {
-    /*width: 100%;*/
-    height: 25px;
-    box-shadow: 0 -5px 30px rgba(61,60,60,0.6);
-    background-color: #3c3c3c;
-    margin: -25px 0;
-    clear: both;
+.game-variant {
+    height: 55%;
+    font-family: Wacky;
+    font-size: 0.25rem;
+    color: white;
+    letter-spacing: 0.04rem;
+    /* border: 4px solid black;*/
+}
+
+.game-variant__single {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*height: 2.1rem;*/
+    height: 50%;
+    background-color: #e58228;
+
+    /*border: 1px solid black;*/
+}
+
+.game-variant__multi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*height: 2.1rem;*/
+    height: 50%;
+    background-color: #5d57a4;
+
+    /*border: 1px solid black;*/
+}
+/*display-2*/
+.display-2 {
+    height: 100%;
+}
+
+.header-box--2 {
+    height: 10%;
+}
+
+.wrapper--2 {
+    height: 90%;
+}
+
+.tttoe--game {
+    height: 90%;
+    width: 100%;
+    /*border: 1px solid;*/
+}
+
+.game-resultation {
+    height: 10%;
+   /* border: 1px solid;*/
+}
+
+
+
+
+/*@media display-1*/
+/*mobile*/
+@media only screen and (max-height: 250px) {
+    html {
+        font-size: 35px;
+    }
+}
+
+@media only screen and (min-height: 251px) and (max-height: 350px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (min-height: 351px) and (max-height: 520px) {
+    html {
+        font-size: 65px;
+    }
+}
+
+@media only screen and (min-height: 600px) and (max-height: 700px)   {
+    html {
+            font-size: 110px;
+    }
+}
+
+@media only screen and (min-height: 701px) and (max-height: 767px)   {
+    html {
+        font-size: 115px;
+    }
+}
+
+@media only screen and (min-height: 768px) and (max-height: 1024px)   {
+    html {
+        font-size: 120px;
+    }
+}
+
+/*desktop*/
+@media only screen and (min-width: 1025px) {
+       .wrapper {
+        display: flex;
+        flex-flow: row-reverse;
+    }
+
+    .tttoe {
+        width: 45%;
+        height: 100%;
+    }
+
+    .tttoe__cells_o::before {
+        font-size: 1rem;
+    }
+
+    .tttoe__cells_x::before {
+        font-size: 1.8rem;
+    }
+
+    .game-info {
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+
+    }
+
+    .tttoe__game-title {
+        width: 100%;
+        height: 35%;
+        font-size: 1.05rem;
+        margin: 1rem 0 0 0;
+        align-items: baseline;
+
+    }
+
+    .game-variant {
+        width: 85%;
+        height: 30%;
+        margin: 0 auto
+    }
+
+   .tttoe__field {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1250px) {
+    .tttoe__game-title {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (width: 1280px) and (height: 800px) {
+    .tttoe__game-title {
+        font-size: 0.9rem;
+        margin: 0.9rem 0 0.1rem;
+    }
+}
+
+@media only screen and (width: 1280px) and (height: 1024px) {
+    .tttoe__field {
+        margin-top: -0.5rem;
+    }
+
+    .tttoe__game-title {
+        height: 30%;
+        font-size: 0.85rem;
+        margin: 1.5rem 0 0;
+    }
+    .game-variant {
+        width:75%;
+        height: 25%;
+    }
+}
+
+@media only screen and (min-width: 1440px)  {
+    .tttoe__game-title {
+        margin: 1.2rem 0 0;
+    }
+
+    .tttoe__field {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .tttoe__field {
+        width: 5rem;
+        height: 5.2rem;
+    }
+
+    .tttoe__cells_o::before {
+        font-size: 1.4rem;
+    }
+
+    .tttoe__cells_x::before {
+        font-size: 2.5rem;
+    }
+
+    .tttoe__game-title {
+        font-size: 1.2rem;
+    }
+
+    .game-variant {
+        font-size: 0.4rem;
+    }
 
 }
+
+@media only screen and (width: 1680px) and (height: 1050px) {
+    .tttoe__game-title {
+        font-size: 1.6rem;
+    }
+    .tttoe__field {
+        width: 6.3rem;
+        height: 6.3rem;
+    }
+}
+
+@media only screen and (min-width: 1900px)  {
+    .tttoe__field {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .tttoe__cells_o::before {
+        font-size: 2.1rem;
+    }
+
+    .tttoe__cells_x::before {
+        font-size: 3.1rem;
+    }
+
+    .tttoe__game-title {
+        font-size: 1.9rem;
+    }
+
+    .game-variant {
+        font-size: 0.6rem;
+    }
+}
+
+/*@media display-2*/
