@@ -26,36 +26,26 @@
 
 html, body {
     height: 100%;
-   /* min-height: 100%;*/
     font-size: 100px;
 }
 
 /*display-1*/
+
 .display-1 {
-    /*display: none;*/
+    display: block;
     height: 100%;
-    min-width: 300px;
-    min-height: 200px;
-
-
-}
-
-.display--1 {
-    display: none;
+    min-width: 320px;
+    min-height: 320px;
 }
 
 .wrapper {
     margin: 0 auto;
-    background-color: #eeeeee;
-   /* display: flex;
-    flex-direction: row-reverse;
-    min-width: 1024px;*/
+    background-color: #eee;
     height: 94%;
 }
 
 .header-box {
     height: 6%;
-    /*height: 0.6rem;*/
     background-color: #5b55a0;
 }
 
@@ -64,22 +54,18 @@ html, body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    /*height: 9.5rem;*/
     height: 50%;
-    /*border: 4px solid red;*/
-
 }
 
 .tttoe__field {
-    width: 2rem;
-    height: 2rem;
-    /*border: 5px solid black;*/
+    width: 2.1rem;
+    height: 2.1rem;
 }
 
 .tttoe__row {
-    width: 100%;
-    height: 33%;
     display:flex;
+    width: 100%;
+    height: 30%;
 }
 
 .ttoe__row--border {
@@ -89,11 +75,10 @@ html, body {
 
 .tttoe__cells {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 33%;
     height: 100%;
-    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
     border: none;
 }
 
@@ -102,26 +87,23 @@ html, body {
     border-right: 0.1rem solid #e58228;
 }
 
-.tttoe__cells_o::before {
+.tttoe__cells-o::before {
     content: 'o';
     font-family: Linas;
     font-size: 0.5rem;
     color: #13afbe;
 }
 
-.tttoe__cells_x::before {
+.tttoe__cells-x::before {
     content: 'x';
     font-family: Dadhand;
     font-size: 1rem;
     color: #7db78e;
-    margin-top: -0.1rem;
+    padding-bottom: 0.1rem;
 }
-
-
 
 .game-info {
     height: 50%;
-    /*margin-top: 0.2rem;*/
 }
 
 .tttoe__game-title {
@@ -134,8 +116,6 @@ html, body {
     font-weight: bold;
     word-spacing: -0.1rem;
     color: #14abb9;
-    /*border: 1px solid black;*/
-
 }
 
 .game-variant {
@@ -144,59 +124,129 @@ html, body {
     font-size: 0.25rem;
     color: white;
     letter-spacing: 0.04rem;
-    /* border: 4px solid black;*/
 }
 
 .game-variant__single {
     display: flex;
+    height: 50%;
     align-items: center;
     justify-content: center;
-    /*height: 2.1rem;*/
-    height: 50%;
     background-color: #e58228;
-
-    /*border: 1px solid black;*/
 }
 
 .game-variant__multi {
     display: flex;
+    height: 50%;
     align-items: center;
     justify-content: center;
-    /*height: 2.1rem;*/
-    height: 50%;
     background-color: #5d57a4;
-
-    /*border: 1px solid black;*/
 }
+
+
 /*display-2*/
+
 .display-2 {
+    display: none;
     height: 100%;
+    min-width: 320px;
+    min-height: 320px;
 }
 
 .header-box--2 {
+    display: flex;
     height: 10%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.header-box__opponents {
+    font-family: Linas;
+    font-size: 0.17rem;
+    color: white;
+    padding-bottom: 0.03rem;
+}
+
+.header-box__opponents:before {
+    content: 'Pl vs Droid';
 }
 
 .wrapper--2 {
     height: 90%;
+    font-family: Linas;
 }
 
 .tttoe--game {
-    height: 90%;
+    height: 85%;
     width: 100%;
-    /*border: 1px solid;*/
+}
+
+.tttoe__field--game {
+    width: 3rem;
+    height: 3rem;
+}
+
+.ttoe__row--border-game {
+    border-top: 0.14rem solid #e58228;
+    border-bottom: 0.14rem solid #e58228;
+}
+
+.tttoe__cells--border-game {
+    border-left: 0.14rem solid #e58228;
+    border-right: 0.14rem solid #e58228;
+}
+
+.tttoe__cells--o::before {
+    content: 'o';
+    font-size: 0.9rem;
+    color: #13afbe;
+    padding-top: 0.1rem;
+}
+
+.tttoe__cells--x::before {
+    content: 'x';
+    font-family: Dadhand;
+    font-size: 1.6rem;
+    color: #7db78e;
+    padding-bottom: 0.2rem;
 }
 
 .game-resultation {
-    height: 10%;
-   /* border: 1px solid;*/
+    display: flex;
+    height: 15%;
+    font-size: 0.16rem;
+    font-weight: bold;
+    padding: 0 1% 0 1%;
 }
 
+.game-resultation__pl-1 {
+    width: 49%;
+    height: 30%;
+}
 
+.game-resultation__pl-1>span:first-child {
+    color: #13afbe;
+}
 
+.game-resultation__pl-1>span:last-child {
+    color: #d95251;
+}
+
+.game-resultation__pl-2 {
+    width: 49%;
+    height: 30%;
+    text-align: right;
+}
+
+.game-resultation__pl-2>span:first-child {
+    color: #7cb88e;
+}
+
+.game-resultation__pl-2>span:last-child {
+    color: #d95251;
+}
 
 /*@media display-1*/
-/*mobile*/
+
 @media only screen and (max-height: 250px) {
     html {
         font-size: 35px;
@@ -217,7 +267,7 @@ html, body {
 
 @media only screen and (min-height: 600px) and (max-height: 700px)   {
     html {
-            font-size: 110px;
+        font-size: 110px;
     }
 }
 
@@ -235,49 +285,53 @@ html, body {
 
 /*desktop*/
 @media only screen and (min-width: 1025px) {
-       .wrapper {
+    .wrapper {
         display: flex;
         flex-flow: row-reverse;
     }
-
     .tttoe {
         width: 45%;
         height: 100%;
     }
-
-    .tttoe__cells_o::before {
+    .tttoe__cells-o::before {
         font-size: 1rem;
     }
-
-    .tttoe__cells_x::before {
+    .tttoe__cells-x::before {
         font-size: 1.8rem;
     }
-
     .game-info {
         width: 50%;
         height: 100%;
         margin: 0 auto;
-
     }
-
     .tttoe__game-title {
         width: 100%;
         height: 35%;
         font-size: 1.05rem;
         margin: 1rem 0 0 0;
         align-items: baseline;
-
     }
-
     .game-variant {
         width: 85%;
         height: 30%;
         margin: 0 auto
     }
-
-   .tttoe__field {
+    .tttoe__field {
         width: 4rem;
         height: 4rem;
+    }
+    .wrapper--2 {
+        display: block;
+        height: 90%;
+    }
+    .tttoe--game {
+        display: flex;
+        width: 100%;
+        height: 85%;
+    }
+    .game-resultation {
+        font-size: 0.20rem;
+        padding: 0 15% 0 15%;
     }
 }
 
@@ -298,7 +352,6 @@ html, body {
     .tttoe__field {
         margin-top: -0.5rem;
     }
-
     .tttoe__game-title {
         height: 30%;
         font-size: 0.85rem;
@@ -314,7 +367,6 @@ html, body {
     .tttoe__game-title {
         margin: 1.2rem 0 0;
     }
-
     .tttoe__field {
         width: 4.5rem;
         height: 4.5rem;
@@ -326,23 +378,18 @@ html, body {
         width: 5rem;
         height: 5.2rem;
     }
-
-    .tttoe__cells_o::before {
+    .tttoe__cells-o::before {
         font-size: 1.4rem;
     }
-
-    .tttoe__cells_x::before {
+    .tttoe__cells-x::before {
         font-size: 2.5rem;
     }
-
     .tttoe__game-title {
         font-size: 1.2rem;
     }
-
     .game-variant {
         font-size: 0.4rem;
     }
-
 }
 
 @media only screen and (width: 1680px) and (height: 1050px) {
@@ -360,22 +407,95 @@ html, body {
         width: 7rem;
         height: 7rem;
     }
-
-    .tttoe__cells_o::before {
+    .tttoe__cells-o::before {
         font-size: 2.1rem;
     }
-
-    .tttoe__cells_x::before {
+    .tttoe__cells-x::before {
         font-size: 3.1rem;
     }
-
     .tttoe__game-title {
         font-size: 1.9rem;
     }
-
     .game-variant {
         font-size: 0.6rem;
     }
 }
 
 /*@media display-2*/
+@media screen and (min-width: 415px) {
+    .game-resultation {
+        padding: 0 10% 0 10%;
+    }
+    .tttoe__field--game {
+        width: 4rem;
+        height: 4rem;
+    }
+    .ttoe__row--border-game {
+        border-top: 0.18rem solid #e58228;
+        border-bottom: 0.18rem solid #e58228;
+    }
+    .tttoe__cells--border-game {
+        border-left: 0.18rem solid #e58228;
+        border-right: 0.18rem solid #e58228;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1023px) {
+    .tttoe__field--game {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
+
+@media screen and (min-height: 1024px) and (max-width: 1430px) {
+    .tttoe__field--game {
+        width: 5rem;
+        height: 5rem;
+    }
+    .tttoe__cells--o::before {
+        font-size: 1.3rem;
+    }
+    .tttoe__cells--x::before {
+        font-size: 1.9rem;
+    }
+}
+
+@media screen and (min-width: 1431px) {
+    .tttoe__field--game {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+    .tttoe__cells--o::before {
+        font-size: 1.3rem;
+    }
+    .tttoe__cells--x::before {
+        font-size:2.3rem;
+    }
+    .game-resultation {
+        font-size: 0.3rem;
+    }
+    .header-box__opponents {
+        font-size: 0.27rem;
+    }
+}
+
+@media screen and (min-width: 1670px) {
+    .tttoe__field--game {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+    .tttoe__cells--o::before {
+        font-size: 2rem;
+    }
+
+    .tttoe__cells--x::before {
+        font-size:3.5rem;
+    }
+    .game-resultation {
+        font-size: 0.4rem;
+    }
+    .header-box__opponents {
+        font-size: 0.38rem;
+        letter-spacing: 0.15rem;
+    }
+}
