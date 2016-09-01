@@ -146,24 +146,52 @@ html, body {
 /*display-2*/
 
 .display-2 {
-    display: none;
+    display: block;
     height: 100%;
     min-width: 320px;
     min-height: 320px;
 }
 
 .header-box--2 {
-    display: flex;
+    display: none;
     height: 10%;
-    justify-content: center;
+    min-width: 300px;
+    /*justify-content: center;*/
     align-items: flex-end;
 }
 
+.header-box__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    width: 0.65rem;
+    height:100%;
+    /*border: 1px solid;*/
+}
+
+.header-box__menu-components {
+    width: 40%;
+    height: 6%;
+    margin-bottom: 7%;
+    /*border: 0.02rem solid;*/
+    background-color: #eee;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
 .header-box__opponents {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
     font-family: Linas;
     font-size: 0.17rem;
     color: white;
+    text-align: center;
     padding-bottom: 0.03rem;
+    /*border: solid;*/
 }
 
 .header-box__opponents:before {
