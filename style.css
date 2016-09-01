@@ -134,6 +134,10 @@ html, body {
     background-color: #e58228;
 }
 
+.game-variant__single {
+    cursor: pointer;
+}
+
 .game-variant__multi {
     display: flex;
     height: 50%;
@@ -142,18 +146,22 @@ html, body {
     background-color: #5d57a4;
 }
 
+.game-variant__multi:hover {
+    cursor: pointer;
+}
+
 
 /*display-2*/
 
 .display-2 {
-    display: block;
+    display: none;
     height: 100%;
     min-width: 320px;
     min-height: 320px;
 }
 
 .header-box--2 {
-    display: none;
+    display: flex;
     height: 10%;
     min-width: 300px;
     /*justify-content: center;*/
@@ -170,6 +178,10 @@ html, body {
     width: 0.65rem;
     height:100%;
     /*border: 1px solid;*/
+}
+
+.header-box__menu:hover {
+    cursor: pointer;
 }
 
 .header-box__menu-components {
