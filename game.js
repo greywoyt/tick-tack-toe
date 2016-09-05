@@ -10,6 +10,7 @@ window.addEventListener( 'load', function () {
     var field=document.querySelector('.display-2 .tttoe__field');
     var cells=document.querySelectorAll('.display-2 .tttoe__cells');
     var nextMove='tttoe__cells--x';
+    var opponnentsName=document.querySelector('.display-2 .header-box__opponents');
     var plOneName=document.querySelector('.game-resultation__pl-1>span:first-child');
     var plOneResult=document.querySelector('.game-resultation__pl-1>span:last-child');
     var resultPlX=0;
@@ -17,41 +18,18 @@ window.addEventListener( 'load', function () {
     var plTwoResult=document.querySelector('.game-resultation__pl-2>span:last-child');
     var resultPlO=0;
 
-    function multiGame() {
-        resultMultiplayer();
-        field.addEventListener('click', function handleCellClick(e) {
-            if(!e.target.classList.contains('tttoe__cells')
-                || e.target.classList.contains('tttoe__cells--x')
-                || e.target.classList.contains('tttoe__cells--o')
-            ){
-                return;
-            }
+    function clearField() {
+        for (var i=0; i<cells.length; i++) {
+            cells[i].classList.remove('tttoe__cells--x');
+            cells[i].classList.remove('tttoe__cells--o');
+        }
+    }
 
-            if(getWinner()) {
-                return;
-            }
+    function clearGame() {
+        resultPlO=0;
+        resultPlX=0;
+    }
 
-            e.target.classList.add(nextMove);
-            if(nextMove==='tttoe__cells--x')
-                nextMove='tttoe__cells--o';
-            else {
-                nextMove='tttoe__cells--x'
-            }
-
-            var winner=getWinner();
-
-            if (winner) {
-                if (winner === 'tttoe__cells_x') {
-                    winnerMessage('Winner X');
-                }
-                if (winner==='tttoe__cells_o') {
-                    winnerMessage('Winner O');
-                }
-            }
-
-        });
-    }    
-    
     function getWinner() {
         var cellsMass=document.querySelectorAll('.display-2 .tttoe__cells');
         var cells=[[0,1,2], [3,4,5], [6,7,8]];
@@ -70,6 +48,7 @@ window.addEventListener( 'load', function () {
         if ( (cells[0][0]===cells[1][1]) && (cells[1][1]===cells[2][2])
             || (cells[2][0]===cells[1][1]) && (cells[1][1]===cells[0][2]) ){
             return cells[1][1];
+            console.log(cells[1][1]);
         }
 
         for(i=0; i<3; i++) {
@@ -79,6 +58,117 @@ window.addEventListener( 'load', function () {
             if ((cells[i][0] === cells[i][1]) && (cells[i][1] === cells[i][2])) {
                 return cells[i][0];
             }
+        }
+        if ( (cells[0][0] === 'tttoe__cells--x' || cells[0][0] === 'tttoe__cells--o' )
+            && (cells[0][1] === 'tttoe__cells--x' || cells[0][1] === 'tttoe__cells--o' )
+            && (cells[0][2] === 'tttoe__cells--x' || cells[0][2] === 'tttoe__cells--o' )
+            && (cells[1][0] === 'tttoe__cells--x' || cells[1][0] === 'tttoe__cells--o' )
+            && (cells[1][1] === 'tttoe__cells--x' || cells[1][1] === 'tttoe__cells--o' )
+            && (cells[1][2] === 'tttoe__cells--x' || cells[1][2] === 'tttoe__cells--o' )
+            && (cells[2][0] === 'tttoe__cells--x' || cells[2][0] === 'tttoe__cells--o' )
+            && (cells[2][1] === 'tttoe__cells--x' || cells[2][1] === 'tttoe__cells--o' )
+            && (cells[2][2] === 'tttoe__cells--x' || cells[2][2] === 'tttoe__cells--o' )
+        ) {
+            return -1;
+        }
+    }
+
+    function singleCellClick(e) {
+        if(!e.target.classList.contains('tttoe__cells')
+            || e.target.classList.contains('tttoe__cells--x')
+            || e.target.classList.contains('tttoe__cells--o')
+        ){
+            return;
+        }
+
+        if(getWinner()) {
+            return;
+        }
+
+        e.target.classList.add(nextMove);
+         setTimeout(droidClick, 400);
+
+        function droidClick() {
+            var mass = [];
+            function randomIndex(min, max) {
+                var rand = min - 0.5 + Math.random() * (max - min + 1);
+                rand = Math.round(rand);
+                return rand;
+            }
+            var a=randomIndex(0, mass.length);
+
+            for (var i = 0; i < cells.length; i++) {
+                if (!cells[i].classList.contains('tttoe__cells--x')
+                &&!cells[i].classList.contains('tttoe__cells--o')){
+                    mass.push(i);
+                }
+            }
+            /*console.log(mass);*/
+            if ( !getWinner() ) {
+                cells[mass[a]].classList.add('tttoe__cells--o');
+                /*console.log(cells);*/
+            }
+        }
+
+        var winner=getWinner();
+
+        if (winner) {
+
+            /*console.log(winner);*/
+
+            if (winner === 'tttoe__cells--x') {
+                resultPlX+=1;
+                plOneResult.innerHTML=resultPlX;
+                setTimeout(clearField, 1500);
+            }
+            if (winner==='tttoe__cells--o') {
+                resultPlO+=1;
+                plTwoResult.innerHTML=resultPlO;
+                setTimeout(clearField, 1500);
+            }
+            if (winner===-1) {
+                setTimeout(clearField, 1500);
+            }
+
+        }
+    }
+
+    function multiCellClick(e) {
+        if(!e.target.classList.contains('tttoe__cells')
+            || e.target.classList.contains('tttoe__cells--x')
+            || e.target.classList.contains('tttoe__cells--o')
+        ){
+            return;
+        }
+
+        if(getWinner()) {
+            return;
+        }
+
+        e.target.classList.add(nextMove);
+        if(nextMove==='tttoe__cells--x')
+            nextMove='tttoe__cells--o';
+        else {
+            nextMove='tttoe__cells--x'
+        }
+
+        var winner=getWinner();
+
+        if (winner) {console.log(winner);
+            if (winner === 'tttoe__cells--x') {
+                resultPlX+=1;
+                plOneResult.innerHTML=resultPlX;
+                setTimeout(clearField, 2000);
+            }
+            if (winner==='tttoe__cells--o') {
+                resultPlO+=1;
+                plTwoResult.innerHTML=resultPlO;
+                setTimeout(clearField, 2000);
+            }
+            if (winner===-1) {
+                setTimeout(clearField, 2000);
+            }
+
         }
     }
 
@@ -91,9 +181,22 @@ window.addEventListener( 'load', function () {
         plTwoResult.innerHTML=resultPlO;
     }
 
+    function singleGame() {
+        opponnentsName.setAttribute('data-opponents', 'Pl vs Droid');
+        field.addEventListener('click', singleCellClick);
+        resultMultiplayer();
+    }
+
+    function multiGame() {
+        opponnentsName.setAttribute('data-opponents', 'Pl X vs Pl O');
+        resultMultiplayer();
+        field.addEventListener('click', multiCellClick);
+    }
+
     buttonSingleGame.addEventListener('click', function StartSingleGame() {
         homePage.style.display='none';
         gamePage.style.display='block';
+        singleGame();
     });
 
     buttonMultiGame.addEventListener('click', function StartMultiGame() {
@@ -105,6 +208,10 @@ window.addEventListener( 'load', function () {
     toHomePage.addEventListener('click', function goToHomePage() {
         homePage.style.display='block';
         gamePage.style.display='none';
+        field.removeEventListener('click', singleCellClick);
+        field.removeEventListener('click', multiCellClick);
+        clearField();
+        clearGame();
     });
 });
 
