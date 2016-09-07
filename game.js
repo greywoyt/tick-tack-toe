@@ -24,54 +24,6 @@ window.addEventListener( 'load', function () {
         resultSinglePlayer();
     }
 
-   /* function playerDroidCellClick() {
-        function droidClick() {
-            var mass = [];
-            function randomIndex(min, max) {
-                var rand = min - 0.5 + Math.random() * (max - min + 1);
-                rand = Math.round(rand);
-                return rand;
-            }
-            var a=randomIndex(0, mass.length);
-
-            for (var i = 0; i < cells.length; i++) {
-                if (!cells[i].classList.contains('tttoe__cells--x')
-                    &&!cells[i].classList.contains('tttoe__cells--o')){
-                    mass.push(i);
-                }
-            }
-
-            if ( !getWinner() ) {
-                cells[mass[a]].classList.add('tttoe__cells--o');
-                getWinner();
-
-
-            } else {
-                console.log(cells);
-
-            }
-        }
-
-        field.addEventListener('click', function singleCellClick(e) {
-                if (!e.target.classList.contains('tttoe__cells')
-                    || e.target.classList.contains('tttoe__cells--x')
-                    || e.target.classList.contains('tttoe__cells--o')
-                ) {
-                    return;
-                }
-
-                if (getWinner()) {
-                    return;
-                }
-
-                e.target.classList.add(nextMove);
-
-            });
-        if (singleCellClick)
-        setTimeout(droidClick, 400);
-    }*/
-
-
     function singleCellClick(e) {
         if(!e.target.classList.contains('tttoe__cells')
             || e.target.classList.contains('tttoe__cells--x')
@@ -80,15 +32,12 @@ window.addEventListener( 'load', function () {
             return;
         }
 
-        if(getWinner()) {
+        if (getWinner()) {
             return;
         }
 
-
-        e.target.classList.add(nextMove);
-        setTimeout(droidClick, 500);
-
-
+        e.target.classList.add('tttoe__cells--x');
+        setTimeout(droidClick, 350);
 
         var winner=getWinner();
 
@@ -129,17 +78,11 @@ window.addEventListener( 'load', function () {
             }
         }
 
-        if ( cells[mass[a]].classList.contains('tttoe__cells--o')
-            ||cells[mass[a]].classList.contains('tttoe__cells--x') ) {
-                return;
-        }
-
         if (getWinner()) {
             return
         }
 
         cells[mass[a]].classList.add('tttoe__cells--o');
-
 
         var winner=getWinner();
 
@@ -148,7 +91,7 @@ window.addEventListener( 'load', function () {
             if (winner === 'tttoe__cells--x') {
                 resultPlX+=1;
                 plOneResult.innerHTML=resultPlX;
-                setTimeout(clearField, 300);
+                setTimeout(clearField, 1500);
             }
             if (winner==='tttoe__cells--o') {
                 resultPlO+=1;
@@ -200,7 +143,7 @@ window.addEventListener( 'load', function () {
 
         var winner=getWinner();
 
-        if (winner) {console.log(winner);
+        if (winner) {
             if (winner === 'tttoe__cells--x') {
                 resultPlX+=1;
                 plOneResult.innerHTML=resultPlX;
@@ -257,7 +200,6 @@ window.addEventListener( 'load', function () {
         if ( (cells[0][0]===cells[1][1]) && (cells[1][1]===cells[2][2])
             || (cells[2][0]===cells[1][1]) && (cells[1][1]===cells[0][2]) ){
             return cells[1][1];
-            console.log(cells[1][1]);
         }
 
         for(i=0; i<3; i++) {
@@ -281,7 +223,6 @@ window.addEventListener( 'load', function () {
             return -1;
         }
     }
-
 
     buttonSingleGame.addEventListener('click', function StartSingleGame() {
         homePage.style.display='none';

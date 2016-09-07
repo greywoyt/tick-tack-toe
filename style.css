@@ -164,7 +164,6 @@ html, body {
     display: flex;
     height: 10%;
     min-width: 300px;
-    /*justify-content: center;*/
     align-items: flex-end;
 }
 
@@ -177,7 +176,6 @@ html, body {
     z-index: 10;
     width: 0.65rem;
     height:100%;
-    /*border: 1px solid;*/
 }
 
 .header-box__menu:hover {
@@ -188,7 +186,6 @@ html, body {
     width: 40%;
     height: 6%;
     margin-bottom: 7%;
-    /*border: 0.02rem solid;*/
     background-color: #eee;
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -203,7 +200,6 @@ html, body {
     color: white;
     text-align: center;
     padding-bottom: 0.03rem;
-    /*border: solid;*/
 }
 
 .header-box__opponents:before {
@@ -220,13 +216,12 @@ html, body {
     width: 100%;
 }
 
-.message-blocks {
+/*.message-blocks {
     position: absolute;
     width: 3rem;
     height:2rem;
     border: 1px solid;
-
-}
+}*/
 
 .tttoe__field--game {
     width: 3rem;
