@@ -84,7 +84,7 @@ window.addEventListener( 'load', function () {
             return;
         }
 
-        
+
         e.target.classList.add(nextMove);
         setTimeout(droidClick, 500);
 
@@ -148,7 +148,7 @@ window.addEventListener( 'load', function () {
             if (winner === 'tttoe__cells--x') {
                 resultPlX+=1;
                 plOneResult.innerHTML=resultPlX;
-                setTimeout(clearField, 1500);
+                setTimeout(clearField, 300);
             }
             if (winner==='tttoe__cells--o') {
                 resultPlO+=1;
